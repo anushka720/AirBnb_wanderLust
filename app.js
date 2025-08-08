@@ -24,6 +24,10 @@ const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
 
+app.get("/", (req, res) =>{
+    res.redirect("/listings");
+});
+
 main()
 .then(() => {
     console.log("connected to DB");
@@ -69,9 +73,7 @@ const sessionOptions = {
     },
 };
 
-// app.get("/", (req, res) =>{
-//     res.send("Hii, I am the root");
-// });
+
 
 
 
@@ -103,17 +105,6 @@ app.use((req, res, next) =>{
     res.locals.currUser = req.user;
     next();
 })
-
-// fake user
-// app.get("/demouser", async(req, res)=>{
-//     let fakeUser = new User({
-//         email: "student123@gmail.com",
-//         username: "sigma-student",
-//     });
-
-//     let registeredUser = await User.register(fakeUser, "helloworld");
-//     res.send(registeredUser);
-// })
 
 
 // these are used for modeling the lines of code
