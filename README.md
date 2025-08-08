@@ -29,6 +29,3 @@ A full-stack vacation rental platform where users can browse, create, and manage
 
 ---
 Thank you so much!!
-  MONGO_URL=<Your MongoDB URI>
-  SESSION_SECRET=<Any secret phrase>
-  CLOUDINARY_* (if using image uploads)
